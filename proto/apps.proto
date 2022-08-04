@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package protorender;
+
+option go_package = "protorender;protorender";
+
+message App {
+    fixed32 id  = 1;
+    string name  = 2;
+    string nameComplement  = 3;
+    string logoUrl  = 4;
+}
+
+message RequestApps {
+    fixed32 id = 1;
+}
+
+message ResponseApps {
+    repeated App apps = 1;
+}
+
+
+service SocietyService {
+    rpc SimpleRPC(RequestApps) returns (ResponseApps) {}
+    rpc ServerSideStreamingRPC(RequestApps) returns (stream App) {}
+    rpc ClientSideStreamingRPC(stream RequestApps) returns (ResponseApps) {}
+    rpc BidirectionalStreamingRPC(stream RequestApps) returns (stream App) {}
+}
