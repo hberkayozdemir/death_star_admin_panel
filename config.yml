@@ -1,0 +1,18 @@
+appname: death_star_admin_panel
+port: 8000
+
+db:
+    use: mongodb
+    mongodb:
+        -   enabled: true
+            host: xx.xx.xx.xxx
+            port: xxxx
+            username: xxxxxx
+            password: xxxxxxxxxx
+            database: xxxxxxxxxx
+            nameconn: connMysql
+
+contacts:
+    name: 'Hilmi Berkay Özdemir'
+    email: hilmiberkayozdemir@yahoo.com
+    adress: 'Feneryolu Mahallesi Kadıköyİstanbul'
