@@ -1,7 +1,7 @@
 package controller
 
 import (
-	"aimi-landing-back-go/internal/society"
+	"github.com/hberkayozdemir/death_star_admin_panel/internal/apps"
 
 	"google.golang.org/grpc"
 
@@ -9,12 +9,12 @@ import (
 )
 
 type Controller struct {
-	Society *society.Server
+	App *apps.Server
 }
 
 func (c *Controller) NewControllerSet() {
-	c.Society = &society.Server{}
-	c.Society.NewServer()
+	c.App = &apps.Server{}
+	c.App.NewServer()
 }
 
 func (c *Controller) NewController() *grpc.Server {
@@ -23,7 +23,7 @@ func (c *Controller) NewController() *grpc.Server {
 	grpcServer := grpc.NewServer()
 
 	// society.RegisterSocietyServiceServer(grpcServer, c.Society)
-	pb.RegisterSocietyServiceServer(grpcServer, c.Society)
+	pb.RegisterSocietyServiceServer(grpcServer, c.App)
 
 	return grpcServer
 }
