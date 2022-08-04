@@ -2,10 +2,8 @@ package controller
 
 import (
 	"github.com/hberkayozdemir/death_star_admin_panel/internal/apps"
-
+	pb "github.com/hberkayozdemir/death_star_admin_panel/internal/protorender"
 	"google.golang.org/grpc"
-
-	pb "aimi-landing-back-go/internal/protorender"
 )
 
 type Controller struct {
